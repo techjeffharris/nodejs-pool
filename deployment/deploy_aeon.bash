@@ -8,7 +8,7 @@ if [[ `whoami` == "root" ]]; then
 fi
 ROOT_SQL_PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 CURUSER=$(whoami)
-echo "Etc/UTC" | sudo tee -a /etc/timezone
+echo "America/Los_Angeles" | sudo tee -a /etc/timezone
 sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Zulu /etc/localtime
 sudo dpkg-reconfigure -f noninteractive tzdata
