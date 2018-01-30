@@ -39,7 +39,7 @@ cd ~
 #sudo systemctl daemon-reload
 #sudo systemctl enable aeon
 #sudo systemctl start aeon
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install v6.9.2
 cd ~/nodejs-pool
@@ -49,7 +49,7 @@ openssl req -subj "/C=IT/ST=Pool/L=Daemon/O=Mining Pool/CN=mining.pool" -newkey 
 mkdir ~/pool_db/
 sed -r "s/(\"db_storage_path\": ).*/\1\"\/home\/$CURUSER\/pool_db\/\",/" config_example.json > config.json
 cd ~
-git clone https://github.com/mesh0000/poolui.git
+git clone https://github.com/techjeffharris/poolui.git
 cd poolui
 npm install
 ./node_modules/bower/bin/bower update
